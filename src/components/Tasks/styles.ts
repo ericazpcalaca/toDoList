@@ -20,12 +20,6 @@ export const styles = StyleSheet.create({
         marginRight: 8,
         lineHeight: 20,
     },
-    doneTextTask:{
-        flex: 1,
-        color: colors.gray[300],
-        fontSize: 14,
-        textDecorationLine: 'line-through'
-    },
     button:{
         width: 32,
         height: 32,

@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
-import { Text, View, TouchableOpacity, Pressable } from 'react-native';
+import React from 'react';
+import { Text, View, Pressable } from 'react-native';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
 
 import { CheckPoint } from '../CheckPoint';
-
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 type Props = {
-  taskDescription: string
-  onRemove: ( ) => void;
-}
+  taskDescription: string;
+  completed: boolean;
+  onRemove: () => void;
+  onToggleCompletion: () => void; 
+};
 
-export function Tasks({ taskDescription, onRemove }: Props) {
+export function Tasks({ taskDescription, completed, onRemove, onToggleCompletion }: Props) {
   return (
     <View style={styles.container}>
-      <CheckPoint />
+      <CheckPoint onPress={onToggleCompletion} />
 
-      <Text style={styles.textTask}>
+      <Text
+        style={[
+          styles.textTask,
+          completed && { textDecorationLine: 'line-through', color: colors.gray[300] },
+        ]}
+      >
         {taskDescription}
       </Text>
 

@@ -15,8 +15,11 @@ import { colors } from '../../styles/colors';
 import { ListOfTasks } from '../../components/ListOfTasks';
 
 export function Home() {
-  const [toDoList, setToDoList] = useState<string[]>([]);
+  
+  const [toDoList, setToDoList] = useState<{ description: string, completed: boolean }[]>([]);
   const [itemList, setItemList] = useState('');
+  
+  const completedTasks = toDoList.filter((task) => task.completed).length;
 
   function handleTaskAdd() {
     if (!itemList.trim()) {
@@ -24,9 +27,13 @@ export function Home() {
       return;
     }
 
-    setToDoList((prevState) => [...prevState, itemList.trim()]);
+    setToDoList((prevState) => [
+      ...prevState,
+      { description: itemList.trim(), completed: false },
+    ]);
     setItemList(''); 
   }
+
 
   return (
     <View style={styles.container}>
@@ -64,7 +71,7 @@ export function Home() {
         </View>
         <View style={styles.taskInfo}>
           <Text style={styles.taskCompleted}>Completed</Text>
-          <Text style={styles.counter}>0</Text>
+          <Text style={styles.counter}>{completedTasks}</Text>
         </View>
       </View>
 

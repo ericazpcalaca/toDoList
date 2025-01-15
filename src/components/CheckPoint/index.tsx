@@ -4,11 +4,16 @@ import { FontAwesome } from '@expo/vector-icons';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
 
-export function CheckPoint() {
+type CheckPointProps = {
+  onPress: () => void; 
+};
+
+export function CheckPoint({ onPress }: CheckPointProps) {
   const [checked, setChecked] = useState(false);
 
   const handlePress = () => {
-    setChecked((prev) => !prev);
+    setChecked((prev) => !prev); 
+    onPress(); 
   };
 
   return (
