@@ -5,7 +5,6 @@ import { colors } from '../../styles/colors';
 
 import { CheckPoint } from '../CheckPoint';
 
-import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 type Props = {
