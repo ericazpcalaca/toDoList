@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Pressable } from 'react-native';
 import { styles } from './styles';
 import { colors } from '../../styles/colors';
+
+import { CheckPoint } from '../CheckPoint';
 
 import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -12,20 +14,31 @@ type Props = {
 }
 
 export function Tasks({ taskDescription, onRemove }: Props) {
-
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.checkPoint}>
-        <Entypo name="circle" size={24} color={colors.blue.blue} />
-      </TouchableOpacity>
+      <CheckPoint />
 
       <Text style={styles.textTask}>
         {taskDescription}
       </Text>
 
-      <TouchableOpacity style={styles.button} onPress={onRemove}>
-        <FontAwesome name="trash-o" size={18} color={colors.gray[300]} />
-      </TouchableOpacity>
+      <Pressable
+        onPress={onRemove}
+        style={({ pressed }) => [
+          {
+            backgroundColor: pressed ? colors.gray[300] : colors.gray[500],
+          },
+          styles.button,
+        ]}
+      >
+        {({ pressed }) => (
+          <FontAwesome
+            name="trash-o"
+            size={18}
+            color={pressed ? colors.red : colors.gray[300]}
+          />
+        )}
+      </Pressable>
     </View>
   );
 }

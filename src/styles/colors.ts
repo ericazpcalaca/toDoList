@@ -8,16 +8,10 @@ export const colors = {
     600: "#1A1A1A",
     700: "#0D0D0D",
   },
-  purple: {
-    purple: "#8284FA",
-    purpleDark: "#5E60CE"
-  },
-  blue: {
-    blue: "#4EA8DE",
-    blueDark: "#1E6F9F",
-  },
-  red: {
-    danger: "#E25858"
-  },
+  purple: "#8284FA",
+  purpleDark: "#5E60CE",
+  blue: "#4EA8DE",
+  blueDark: "#1E6F9F",
+  red: "#E25858",
   white: '#FFF',
 }

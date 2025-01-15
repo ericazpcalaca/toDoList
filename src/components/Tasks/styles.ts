@@ -8,8 +8,7 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         flexDirection: 'row',
         alignItems:'center',
-        paddingBottom: 6,
-        paddingTop: 6,
+        padding: 12,
         marginBottom:5
     },
     textTask:{
@@ -17,7 +16,8 @@ export const styles = StyleSheet.create({
         color: colors.gray[100],
         fontSize: 14,
         maxWidth: '80%',
-        marginLeft: 10,
+        marginLeft: 8,
+        marginRight: 8,
         lineHeight: 20,
     },
     doneTextTask:{
@@ -27,13 +27,10 @@ export const styles = StyleSheet.create({
         textDecorationLine: 'line-through'
     },
     button:{
-        width: 56,
-        height: 56,
+        width: 32,
+        height: 32,
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    checkPoint:{
-        marginLeft: 10,
     },
 })

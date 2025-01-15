@@ -4,12 +4,18 @@ import { Text, View, FlatList, Image, Alert } from 'react-native';
 import { styles } from './styles';
 import { Tasks } from '../../components/Tasks';
 
+type Props = {
+    id: string,
+    item: string;
+    onRemove: ( ) => void;
+}
+
 export function ListOfTasks() {
     const [toDoList, setToDoList] = useState<string[]>([]);
     const [itemList, setItemList] = useState('');
 
     function handleTaskRemove(name: string){
-    
+     
         Alert.alert('Remove Task', `Do you wish to remove this task?`, [
         {
             text: 'Yes',
@@ -24,7 +30,7 @@ export function ListOfTasks() {
     return (
         <View style={styles.container}>
             <FlatList 
-                data= {[]}
+                data= {['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'bbbb']}
                 keyExtractor={item => item}
                 renderItem={({ item }) => (
                     <Tasks

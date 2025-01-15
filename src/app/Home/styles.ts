@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         height: 56,
         backgroundColor: colors.gray[500],
-        borderRadius: 5,
+        borderRadius: 8,
         borderColor: colors.gray[700],
         color: colors.white,
         padding: 16,
@@ -34,10 +34,8 @@ export const styles = StyleSheet.create({
         marginRight: 4
     },
     button:{
-        width: 56,
-        height: 56,
-        borderRadius: 5,
-        backgroundColor: colors.blue.blueDark,
+        padding: 18,
+        borderRadius: 6,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -60,13 +58,13 @@ export const styles = StyleSheet.create({
     },
     taskCreated:{
         fontWeight: 'bold',
-        color: colors.blue.blue,
+        color: colors.blue,
         paddingRight: 10,
         fontSize: 14,
     },
     taskCompleted:{
         fontWeight: 'bold',
-        color: colors.purple.purple,
+        color: colors.purple,
         paddingRight: 10,
         fontSize: 14,
     },
